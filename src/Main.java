@@ -18,8 +18,13 @@ public class Main {
         System.out.println(checkSum(9,2));
         System.out.println();
 
-        checkSumSign(0);
+        checkValuePositive(0);
         System.out.println();
+
+        System.out.println(checkNumber(-1));
+        System.out.println();
+
+
 
 
 
@@ -68,8 +73,12 @@ public class Main {
         return (sum > 10 && sum <= 20);
     }
 
-    public static void checkSumSign(int a){
+    public static void checkValuePositive(int a){
         System.out.println((a >= 0) ? "Положительное" : "Отрицательное");
+    }
+
+    public static Boolean checkNumber(int a){
+        return (a < 0) ? true : false;
     }
 
 
