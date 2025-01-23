@@ -32,18 +32,19 @@ public class Main {
         System.out.println(checkYearsLeap()); // 9
         System.out.println();
 
-        arrayReplaceValue(); // 10
+        replaceValueArray(); // 10
         System.out.println();
 
         fillArray(); // 11
         System.out.println();
 
-        arrayMultiply(); // 12
+        multiplyArray(); // 12
         System.out.println();
 
-        arrayReplaciDiagonal(); // 13
+        replacDiagonalArray(); // 13
         System.out.println();
 
+        System.out.println(Arrays.toString(returnArray(5, 3))); // 14
 
 
     }
@@ -68,12 +69,9 @@ public class Main {
 
         int value = random.nextInt(-100, 200);
 
-        if (value <= 0)
-            System.out.println("Красный");
-        else if (value > 100)
-            System.out.println("Зеленый");
-        else
-            System.out.println("Желтый");
+        if (value <= 0) System.out.println("Красный");
+        else if (value > 100) System.out.println("Зеленый");
+        else System.out.println("Желтый");
     }
 
     public static void compareNumbers() {
@@ -85,7 +83,7 @@ public class Main {
         System.out.println((a >= b) ? "a >= b" : "a < b");
     }
 
-    public static Boolean checkSum(int a, int b) {
+    public static boolean checkSum(int a, int b) {
         int sum = a + b;
 
         return (sum > 10 && sum <= 20);
@@ -95,7 +93,7 @@ public class Main {
         System.out.println((a >= 0) ? "Положительное" : "Отрицательное");
     }
 
-    public static Boolean checkNumber(int a) {
+    public static boolean checkNumber(int a) {
         return (a < 0) ? true : false;
     }
 
@@ -105,19 +103,17 @@ public class Main {
         }
     }
 
-    public static Boolean checkYearsLeap() {
+    public static boolean checkYearsLeap() {
 
         LocalDate currentData = LocalDate.now();
         int year = currentData.getYear();
 
-        if (year % 4 == 0)
-            if (year % 100 != 0 || year % 400 == 0)
-                return true;
+        if (year % 4 == 0) if (year % 100 != 0 || year % 400 == 0) return true;
 
         return false;
     }
 
-    public static void arrayReplaceValue() {
+    public static void replaceValueArray() {
         Random random = new Random();
 
         int[] arr = new int[random.nextInt(1, 21)];
@@ -144,7 +140,7 @@ public class Main {
         System.out.println(Arrays.toString(arr));
     }
 
-    public static void arrayMultiply() {
+    public static void multiplyArray() {
 
         int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         System.out.println(Arrays.toString(arr));
@@ -157,7 +153,7 @@ public class Main {
 
     }
 
-    public static void arrayReplaciDiagonal() {
+    public static void replacDiagonalArray() {
         Random random = new Random();
 
         int value = random.nextInt(2, 11);
@@ -176,5 +172,13 @@ public class Main {
 
     }
 
+    public static int[] returnArray(int len, int initialValue) {
 
+        int[] arr = new int[len];
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = initialValue;
+        }
+        return arr;
+    }
 }
