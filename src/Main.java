@@ -3,28 +3,29 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
 
-        printThreeWords();
+        printThreeWords(); // 1
         System.out.println();
 
-        checkSumSign();
+        checkSumSign(); // 2
         System.out.println();
 
-        printColor();
+        printColor(); // 3
         System.out.println();
 
-        compareNumbers();
+        compareNumbers(); // 4
         System.out.println();
 
-        System.out.println(checkSum(9,2));
+        System.out.println(checkSum(9, 2)); // 5
         System.out.println();
 
-        checkValuePositive(0);
+        checkValuePositive(0); // 6
         System.out.println();
 
-        System.out.println(checkNumber(-1));
+        System.out.println(checkNumber(-1)); // 7
         System.out.println();
 
-
+        printCountStrings("HI", 5); // 8
+        System.out.println();
 
 
 
@@ -73,13 +74,20 @@ public class Main {
         return (sum > 10 && sum <= 20);
     }
 
-    public static void checkValuePositive(int a){
+    public static void checkValuePositive(int a) {
         System.out.println((a >= 0) ? "Положительное" : "Отрицательное");
     }
 
-    public static Boolean checkNumber(int a){
+    public static Boolean checkNumber(int a) {
         return (a < 0) ? true : false;
     }
+
+    public static void printCountStrings(String str, int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.println(str);
+        }
+    }
+
 
 
 }
