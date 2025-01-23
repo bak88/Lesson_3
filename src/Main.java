@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -25,6 +27,21 @@ public class Main {
         System.out.println();
 
         printCountStrings("HI", 5); // 8
+        System.out.println();
+
+        System.out.println(checkYearsLeap()); // 9
+        System.out.println();
+
+        arrayReplaceValue(); // 10
+        System.out.println();
+
+        fillArray(); // 11
+        System.out.println();
+
+        arrayMultiply(); // 12
+        System.out.println();
+
+        arrayReplaciDiagonal(); // 13
         System.out.println();
 
 
@@ -88,6 +105,76 @@ public class Main {
         }
     }
 
+    public static Boolean checkYearsLeap() {
+
+        LocalDate currentData = LocalDate.now();
+        int year = currentData.getYear();
+
+        if (year % 4 == 0)
+            if (year % 100 != 0 || year % 400 == 0)
+                return true;
+
+        return false;
+    }
+
+    public static void arrayReplaceValue() {
+        Random random = new Random();
+
+        int[] arr = new int[random.nextInt(1, 21)];
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(0, 2);
+        }
+        System.out.println(Arrays.toString(arr));
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (arr[i] == 0) ? 1 : 0;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void fillArray() {
+
+        int[] arr = new int[100];
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+        }
+
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void arrayMultiply() {
+
+        int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println(Arrays.toString(arr));
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (arr[i] < 6) ? arr[i] * 2 : arr[i];
+        }
+
+        System.out.println(Arrays.toString(arr));
+
+    }
+
+    public static void arrayReplaciDiagonal() {
+        Random random = new Random();
+
+        int value = random.nextInt(2, 11);
+
+        int[][] matrix = new int[value][value];
+
+        for (int i = 0; i < matrix.length; i++) {
+            matrix[i][i] = 1;
+            matrix[i][matrix.length - i - 1] = 1;
+
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
 
 
 }
